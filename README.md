@@ -115,15 +115,26 @@ Each skill includes:
 
 ## 🎯 Getting Started
 
+### Option A: Install via Claude Code Plugin (Recommended for Claude Code users)
+
+Run the following commands in Claude Code:
+
+```shell
+/plugin marketplace add DenDen047/claude-scientific-skills
+/plugin install scientific-skills
+```
+
+### Option B: Manual Installation
+
 Claude Scientific Skills follows the open [Agent Skills](https://agentskills.io/) standard. Simply copy the skill folders into your skills directory and your AI agent will automatically discover and use them.
 
-### Step 1: Clone the Repository
+#### Step 1: Clone the Repository
 
 ```bash
 git clone https://github.com/K-Dense-AI/claude-scientific-skills.git
 ```
 
-### Step 2: Copy Skills to Your Skills Directory
+#### Step 2: Copy Skills to Your Skills Directory
 
 Copy the individual skill folders from `scientific-skills/` to one of the supported skill directories below. You can install skills **globally** (available across all projects) or **per-project** (available only in that project).
 
