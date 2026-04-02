@@ -1,16 +1,17 @@
 # Claude Scientific Skills
 
-> **New: [K-Dense BYOK](https://github.com/K-Dense-AI/k-dense-byok)** — A free, open-source AI co-scientist that runs on your desktop, powered by Claude Scientific Skills. Bring your own API keys, pick from 40+ models, and get a full research workspace with web search, file handling, 250+ scientific databases, and access to all 170+ skills in this repo. Your data stays on your computer, and you can optionally scale to cloud compute via [Modal](https://modal.com/) for heavy workloads. [Get started here.](https://github.com/K-Dense-AI/k-dense-byok)
+> **New: [K-Dense BYOK](https://github.com/K-Dense-AI/k-dense-byok)** — A free, open-source AI co-scientist that runs on your desktop, powered by Claude Scientific Skills. Bring your own API keys, pick from 40+ models, and get a full research workspace with web search, file handling, 100+ scientific databases, and access to all 75 skills in this repo. Your data stays on your computer, and you can optionally scale to cloud compute via [Modal](https://modal.com/) for heavy workloads. [Get started here.](https://github.com/K-Dense-AI/k-dense-byok)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
-[![Skills](https://img.shields.io/badge/Skills-85-brightgreen.svg)](#whats-included)
+[![Skills](https://img.shields.io/badge/Skills-75-brightgreen.svg)](#whats-included)
+[![Databases](https://img.shields.io/badge/Databases-100%2B-orange.svg)](#whats-included)
 [![Agent Skills](https://img.shields.io/badge/Standard-Agent_Skills-blueviolet.svg)](https://agentskills.io/)
 [![Works with](https://img.shields.io/badge/Works_with-Cursor_|_Claude_Code_|_Codex-blue.svg)](#getting-started)
 [![X](https://img.shields.io/badge/Follow_on_X-%40k__dense__ai-000000?logo=x)](https://x.com/k_dense_ai)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-K--Dense_Inc.-0A66C2?logo=linkedin)](https://www.linkedin.com/company/k-dense-inc)
 [![YouTube](https://img.shields.io/badge/YouTube-K--Dense_Inc.-FF0000?logo=youtube)](https://www.youtube.com/@K-Dense-Inc)
 
-A curated collection of **85 scientific and research skills** for any AI agent that supports the open [Agent Skills](https://agentskills.io/) standard, originally created by [K-Dense](https://k-dense.ai). Works with **Cursor, Claude Code, Codex, and more**. This fork is tailored for **computer science, machine learning, data science, and general research workflows** — biology/medical-specific skills have been removed to reduce context overhead.
+A comprehensive collection of **75 ready-to-use scientific and research skills** (covering machine learning, data science, time series forecasting, geospatial science, quantum computing, 78+ scientific databases, and more) for any AI agent that supports the open [Agent Skills](https://agentskills.io/) standard, created by [K-Dense](https://k-dense.ai). Works with **Cursor, Claude Code, Codex, and more**. Transform your AI agent into a research assistant capable of executing complex multi-step scientific workflows across ML, data science, and beyond.
 
 <p align="center">
   <a href="https://k-dense.ai">
@@ -43,10 +44,10 @@ These skills enable your AI agent to seamlessly work with specialized libraries,
 
 ## 📦 What's Included
 
-This repository provides **85 scientific and research skills** organized into the following categories:
+This repository provides **75 scientific and research skills** organized into the following categories:
 
 - **30+ Optimized Python Package Skills** - PyTorch Lightning, scikit-learn, Transformers, PennyLane, Qiskit, NetworkX, Polars, Dask, and others — with curated documentation, examples, and best practices
-- **10+ Database & Data Source Skills** - OpenAlex, PubMed, bioRxiv, arXiv, FRED, Alpha Vantage, SEC EDGAR, and more
+- **3 Database & Data Source Skills** - Database Lookup (78+ databases), Paper Lookup (10 academic databases), usfiscaldata
 - **30+ Analysis & Communication Tools** - Literature review, scientific writing, peer review, document processing, posters, slides, schematics, infographics, Mermaid diagrams, and more
 - **10+ Research Methodology Tools** - Hypothesis generation, grant writing, statistical analysis, EDA, scholar evaluation
 
@@ -64,6 +65,7 @@ Each skill includes:
 - [What's Included](#whats-included)
 - [Why Use This?](#why-use-this)
 - [Getting Started](#getting-started)
+- [Security Disclaimer](#-security-disclaimer)
 - [Support Open Source](#-support-the-open-source-community)
 - [Prerequisites](#prerequisites)
 - [Quick Examples](#quick-examples)
@@ -87,9 +89,9 @@ Each skill includes:
 - **Multi-Step Workflows** - Execute complex pipelines with a single prompt
 
 ### 🎯 **Focused Coverage**
-- **85 Skills** - Focused on CS, ML, data science, and general research workflows
+- **75 Skills** - Focused on CS, ML, data science, and general research workflows
 - **30+ Python Package Skills** - PyTorch Lightning, scikit-learn, Transformers, PennyLane, Qiskit, NetworkX, Polars, Dask, and others
-- **10+ Database Skills** - OpenAlex, PubMed, bioRxiv, arXiv, FRED, Alpha Vantage, and more
+- **3 Database Skills** - Database Lookup (78+ databases), Paper Lookup (10 academic databases), usfiscaldata
 
 ### 🔧 **Easy Integration**
 - **Simple Setup** - Copy skills to your skills directory and start working
@@ -173,6 +175,30 @@ cp -r /path/to/claude-scientific-skills/scientific-skills/* .cursor/skills/
 
 ---
 
+## ⚠️ Security Disclaimer
+
+> **Skills can execute code and influence your coding agent's behavior. Review what you install.**
+
+Agent Skills are powerful — they can instruct your AI agent to run arbitrary code, install packages, make network requests, and modify files on your system. A malicious or poorly written skill has the potential to steer your coding agent into harmful behavior.
+
+We take security seriously. All contributions go through a review process, and we run LLM-based security scans (via [Cisco AI Defense Skill Scanner](https://github.com/cisco-ai-defense/skill-scanner)) on every skill in this repository. However, as a small team with a growing number of community contributions, we cannot guarantee that every skill has been exhaustively reviewed for all possible risks.
+
+**It is ultimately your responsibility to review the skills you install and decide which ones to trust.**
+
+We recommend the following:
+
+- **Do not install everything at once.** Only install the skills you actually need for your work. While installing the full collection was reasonable when K-Dense created and maintained every skill, the repository now includes many community contributions that we may not have reviewed as thoroughly.
+- **Read the `SKILL.md` before installing.** Each skill's documentation describes what it does, what packages it uses, and what external services it connects to. If something looks suspicious, don't install it.
+- **Check the contribution history.** Skills authored by K-Dense (`K-Dense-AI`) have been through our internal review process. Community-contributed skills have been reviewed to the best of our ability, but with limited resources.
+- **Run the security scanner yourself.** Before installing third-party skills, scan them locally:
+  ```bash
+  uv pip install cisco-ai-skill-scanner
+  skill-scanner scan /path/to/skill --use-behavioral
+  ```
+- **Report anything suspicious.** If you find a skill that looks malicious or behaves unexpectedly, please [open an issue](https://github.com/K-Dense-AI/claude-scientific-skills/issues) immediately so we can investigate.
+
+---
+
 ## ❤️ Support the Open Source Community
 
 Claude Scientific Skills is powered by many incredible open source projects maintained by dedicated developers and research communities worldwide. Projects like scikit-learn, PyTorch Lightning, NetworkX, Polars, and many others form the foundation of these skills.
@@ -190,7 +216,7 @@ Claude Scientific Skills is powered by many incredible open source projects main
 
 ## ⚙️ Prerequisites
 
-- **Python**: 3.9+ (3.12+ recommended for best compatibility)
+- **Python**: 3.11+ (3.12+ recommended for best compatibility)
 - **uv**: Python package manager (required for installing skill dependencies)
 - **Client**: Any agent that supports the [Agent Skills](https://agentskills.io/) standard (Cursor, Claude Code, Gemini CLI, Codex, etc.)
 - **System**: macOS, Linux, or Windows with WSL2
@@ -235,11 +261,11 @@ Once you've installed the skills, you can ask your AI agent to execute complex m
 ```
 Use available skills you have access to whenever possible. Load the Cora citation dataset with
 Torch Geometric, build a GCN model with PyTorch Lightning, evaluate with scikit-learn metrics,
-interpret predictions with SHAP, search OpenAlex for related methods papers, and create
+interpret predictions with SHAP, search for related methods papers with Paper Lookup, and create
 publication-quality visualizations with matplotlib and seaborn.
 ```
 
-**Skills Used**: Torch Geometric, PyTorch Lightning, scikit-learn, SHAP, OpenAlex, matplotlib, seaborn, scientific visualization
+**Skills Used**: Torch Geometric, PyTorch Lightning, scikit-learn, SHAP, Paper Lookup, matplotlib, seaborn, scientific visualization
 
 ---
 
@@ -249,12 +275,12 @@ publication-quality visualizations with matplotlib and seaborn.
 **Prompt**:
 ```
 Use available skills you have access to whenever possible. Pull GDP and unemployment data from
-FRED, apply zero-shot forecasting with TimesFM, compare against classical methods using aeon
-and statsmodels, perform Bayesian modeling with PyMC, visualize results with Plotly, and write
-up findings with scientific writing tools.
+Database Lookup (FRED), apply zero-shot forecasting with TimesFM, compare against classical
+methods using aeon and statsmodels, perform Bayesian modeling with PyMC, visualize results
+with Plotly, and write up findings with scientific writing tools.
 ```
 
-**Skills Used**: FRED, TimesFM, aeon, statsmodels, PyMC, Plotly, scientific writing
+**Skills Used**: Database Lookup, TimesFM, aeon, statsmodels, PyMC, Plotly, scientific writing
 
 ---
 
@@ -288,7 +314,7 @@ If so, **[K-Dense Web](https://k-dense.ai)** was built for you. It is the full A
 
 | Feature | This Repo | K-Dense Web |
 |---------|-----------|-------------|
-| Scientific Skills | 85 skills (CS-focused) | **200+ skills** (all domains) |
+| Scientific Skills | 75 skills (CS-focused) | **200+ skills** (all domains) |
 | Setup | Manual installation | **Zero setup, works instantly** |
 | Compute | Your machine | **Cloud GPUs and HPC included** |
 | Workflows | Prompt and code | **End-to-end research pipelines** |
@@ -335,22 +361,20 @@ If so, **[K-Dense Web](https://k-dense.ai)** was built for you. It is the full A
 - **Symbolic Math**: Algebraic manipulation and calculus with SymPy
 
 ### 💹 Financial & Economic Research
-- **SEC Filings**: Analyze 10-K, 10-Q, insider trading with edgartools
-- **Macroeconomic Data**: GDP, unemployment, inflation from FRED
-- **Market Data**: Stocks, options, forex, crypto with Alpha Vantage
+- **Unified Access**: SEC filings, macroeconomic data, market data via Database Lookup (FRED, Alpha Vantage, SEC EDGAR, and more)
 - **Fiscal Data**: U.S. Treasury data with usfiscaldata
 
 ---
 
 ## 📚 Available Skills
 
-This repository contains **85 scientific and research skills** focused on CS, ML, data science, and general research workflows. Each skill provides comprehensive documentation, code examples, and best practices.
+This repository contains **75 scientific and research skills** focused on CS, ML, data science, and general research workflows. Each skill provides comprehensive documentation, code examples, and best practices.
 
 ### Skill Categories
 
 > **Note:** The skills listed below are *explicitly defined* — curated with documentation, examples, and best practices. The agent can install and use *any* Python package or call *any* API, even without a dedicated skill. The skills listed simply make common workflows faster and more dependable.
 
-#### 🤖 **Machine Learning & AI** (16 skills)
+#### 🤖 **Machine Learning & AI** (15 skills)
 - Deep learning: PyTorch Lightning, Transformers, Stable Baselines3, PufferLib
 - Classical ML: scikit-learn, scikit-survival, SHAP
 - Time series: aeon, TimesFM (Google's zero-shot foundation model)
@@ -366,25 +390,24 @@ This repository contains **85 scientific and research skills** focused on CS, ML
 - Astronomy: Astropy
 - Quantum computing: Cirq, PennyLane, Qiskit, QuTiP
 
-#### ⚙️ **Engineering & Simulation** (6 skills)
+#### ⚙️ **Engineering & Simulation** (4 skills)
 - Numerical computing: MATLAB/Octave
 - Computational fluid dynamics: FluidSim
 - Discrete-event simulation: SimPy
-- Data processing: Dask, Polars, Vaex
+- Symbolic math: SymPy
 
 #### 📊 **Data Analysis & Visualization** (17 skills)
 - Visualization: Matplotlib, Seaborn, Plotly, Scientific Visualization
 - Geospatial: GeoPandas, GeoMaster
 - Network analysis: NetworkX
-- Symbolic math: SymPy
+- Data processing: Dask, Polars, Vaex
 - Document processing: PDF, DOCX, PPTX, XLSX
 - Infographics, Markdown & Mermaid Writing
-- Data access: Data Commons
 - EDA and Statistical Analysis workflows
 - N-D arrays: Zarr
 
-#### 📚 **Scientific Communication** (20 skills)
-- Literature: OpenAlex, PubMed, bioRxiv, arXiv, Literature Review
+#### 📚 **Scientific Communication** (19 skills)
+- Literature: Paper Lookup (10 academic databases), Literature Review
 - Advanced paper search: BGPT Paper Search
 - Web search: Perplexity Search, Parallel Web
 - Writing: Scientific Writing, Peer Review
@@ -395,16 +418,16 @@ This repository contains **85 scientific and research skills** focused on CS, ML
 - Infographics, Citation Management
 - Illustration: Generate Image
 
-#### 🔬 **Databases & Data Sources** (10 skills)
-- Literature: bioRxiv, arXiv, OpenAlex, PubMed
-- Patents: USPTO
-- Financial: FRED, Alpha Vantage, edgartools, usfiscaldata, hedgefundmonitor
+#### 🔬 **Databases & Data Sources** (3 skills)
+- Unified database access: Database Lookup (78+ databases covering chemistry, genomics, patents, economics, and more)
+- Academic papers: Paper Lookup (10 databases including arXiv, PubMed, OpenAlex, bioRxiv, Crossref, Semantic Scholar)
+- U.S. fiscal data: usfiscaldata
 
 #### 🔧 **Infrastructure & Platforms** (2 skills)
 - Cloud compute: Modal
 - Resource detection: Get Available Resources
 
-#### 🎓 **Research Methodology & Planning** (8 skills)
+#### 🎓 **Research Methodology & Planning** (9 skills)
 - Ideation: Scientific Brainstorming, Hypothesis Generation
 - Critical analysis: Scientific Critical Thinking, Scholar Evaluation
 - Scenario analysis: What-If Oracle
@@ -414,15 +437,7 @@ This repository contains **85 scientific and research skills** focused on CS, ML
 - Discovery: Research Lookup
 - Market analysis: Market Research Reports
 
-#### 💹 **Financial & SEC Research** (5 skills)
-- SEC filings: edgartools
-- U.S. fiscal data: usfiscaldata
-- Macroeconomic data: FRED
-- Hedge fund analytics: hedgefundmonitor
-- Global market data: Alpha Vantage
-
-#### 🔧 **Utility** (2 skills)
-- File-based planning: Planning with Files
+#### 🔧 **Utility** (1 skill)
 - Reference management: pyzotero
 
 > 📖 **For complete details on all skills**, see [docs/scientific-skills.md](docs/scientific-skills.md)
@@ -464,12 +479,12 @@ We welcome contributions to expand and improve this scientific skills repository
 
 ### Contribution Guidelines
 
-✅ **Adhere to the [Agent Skills Specification](https://agentskills.io/specification)** — Every skill must follow the official spec (valid `SKILL.md` frontmatter, naming conventions, directory structure)  
-✅ Maintain consistency with existing skill documentation format  
-✅ Ensure all code examples are tested and functional  
-✅ Follow scientific best practices in examples and workflows  
-✅ Update relevant documentation when adding new capabilities  
-✅ Provide clear comments and docstrings in code  
+✅ **Adhere to the [Agent Skills Specification](https://agentskills.io/specification)** — Every skill must follow the official spec (valid `SKILL.md` frontmatter, naming conventions, directory structure)
+✅ Maintain consistency with existing skill documentation format
+✅ Ensure all code examples are tested and functional
+✅ Follow scientific best practices in examples and workflows
+✅ Update relevant documentation when adding new capabilities
+✅ Provide clear comments and docstrings in code
 ✅ Include references to official documentation
 
 ### Security Scanning
@@ -532,41 +547,41 @@ This project builds on 50+ amazing open source projects. If you find value in th
 
 ### General Questions
 
-**Q: Is this free to use?**  
+**Q: Is this free to use?**
 A: Yes! This repository is MIT licensed. However, each individual skill has its own license specified in the `license` metadata field within its `SKILL.md` file—be sure to review and comply with those terms.
 
-**Q: Why are all skills grouped together instead of separate packages?**  
+**Q: Why are all skills grouped together instead of separate packages?**
 A: We believe good science in the age of AI is inherently interdisciplinary. Bundling all skills together makes it trivial for you (and your agent) to bridge across fields—e.g., combining genomics, cheminformatics, clinical data, and machine learning in one workflow—without worrying about which individual skills to install or wire together.
 
-**Q: Can I use this for commercial projects?**  
+**Q: Can I use this for commercial projects?**
 A: The repository itself is MIT licensed, which allows commercial use. However, individual skills may have different licenses—check the `license` field in each skill's `SKILL.md` file to ensure compliance with your intended use.
 
-**Q: Do all skills have the same license?**  
+**Q: Do all skills have the same license?**
 A: No. Each skill has its own license specified in the `license` metadata field within its `SKILL.md` file. These licenses may differ from the repository's MIT License. Users are responsible for reviewing and adhering to the license terms of each individual skill they use.
 
-**Q: How often is this updated?**  
+**Q: How often is this updated?**
 A: We regularly update skills to reflect the latest versions of packages and APIs. Major updates are announced in release notes.
 
-**Q: Can I use this with other AI models?**  
+**Q: Can I use this with other AI models?**
 A: The skills follow the open [Agent Skills](https://agentskills.io/) standard and work with any compatible agent, including Cursor, Claude Code, and Codex.
 
 ### Installation & Setup
 
-**Q: Do I need all the Python packages installed?**  
+**Q: Do I need all the Python packages installed?**
 A: No! Only install the packages you need. Each skill specifies its requirements in its `SKILL.md` file.
 
-**Q: What if a skill doesn't work?**  
+**Q: What if a skill doesn't work?**
 A: First check the [Troubleshooting](#troubleshooting) section. If the issue persists, file an issue on GitHub with detailed reproduction steps.
 
-**Q: Do the skills work offline?**  
+**Q: Do the skills work offline?**
 A: Database skills require internet access to query APIs. Package skills work offline once Python dependencies are installed.
 
 ### Contributing
 
-**Q: Can I contribute my own skills?**  
+**Q: Can I contribute my own skills?**
 A: Absolutely! We welcome contributions. See the [Contributing](#contributing) section for guidelines and best practices.
 
-**Q: How do I report bugs or suggest features?**  
+**Q: How do I report bugs or suggest features?**
 A: Open an issue on GitHub with a clear description. For bugs, include reproduction steps and expected vs actual behavior.
 
 ---
@@ -608,7 +623,7 @@ If you use Claude Scientific Skills in your research or project, please cite it 
   title = {Claude Scientific Skills: A Comprehensive Collection of Scientific Tools for Claude AI},
   year = {2026},
   url = {https://github.com/K-Dense-AI/claude-scientific-skills},
-  note = {85 skills covering ML, data science, and general research tools}
+  note = {75 skills covering ML, data science, and general research tools}
 }
 ```
 
